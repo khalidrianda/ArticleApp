@@ -31,11 +31,11 @@ func (rq *repoQuery) GetData(query string, author string) ([]domain.Core, error)
 	var result *gorm.DB
 
 	if query != "" && author != "" {
-		result = rq.db.Where("author = ?", author).Where("title = ? OR author = ?", query, query).Order("created_at desc").Find(&resQry)
+		result = rq.db.Where("author LIKE ?", author).Where("title LIKE ? OR body LIKE ?", query, query).Order("created_at desc").Find(&resQry)
 	} else if query != "" {
-		result = rq.db.Where("title = ? OR author = ?", query, query).Order("created_at desc").Find(&resQry)
+		result = rq.db.Where("title LIKE ? OR body LIKE ?", query, query).Order("created_at desc").Find(&resQry)
 	} else if author != "" {
-		result = rq.db.Where("author = ?", author).Order("created_at desc").Find(&resQry)
+		result = rq.db.Where("author LIKE ?", author).Order("created_at desc").Find(&resQry)
 	} else {
 		result = rq.db.Order("created_at desc").Find(&resQry)
 	}

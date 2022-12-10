@@ -20,6 +20,13 @@ func (as *articleServices) Create(newData domain.Core) (domain.Core, error) {
 }
 
 func (as *articleServices) Show(query string, author string) ([]domain.Core, error) {
+	if query != "" {
+		query = "%" + query + "%"
+	}
+	if author != "" {
+		author = "%" + author + "%"
+	}
+
 	res, err := as.qry.GetData(query, author)
 	if err != nil {
 		return nil, err

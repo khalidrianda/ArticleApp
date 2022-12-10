@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/khalidrianda/ArticleApp/config"
+	"github.com/khalidrianda/ArticleApp/features/articles/repository"
 
 	"github.com/labstack/gommon/log"
 	"gorm.io/driver/mysql"
@@ -31,4 +32,5 @@ func InitDB(c *config.AppConfig) *gorm.DB {
 
 // FUNC TO MIGRATE TABLE TO DATABASE
 func MigrateDB(db *gorm.DB) {
+	db.AutoMigrate(repository.Article{})
 }

@@ -5,6 +5,7 @@ import (
 
 	"github.com/khalidrianda/ArticleApp/config"
 	"github.com/khalidrianda/ArticleApp/utils/database"
+	"github.com/khalidrianda/ArticleApp/utils/helper"
 
 	"github.com/khalidrianda/ArticleApp/features/articles/delivery"
 	"github.com/khalidrianda/ArticleApp/features/articles/repository"
@@ -20,6 +21,7 @@ func main() {
 	db := database.InitDB(cfg)
 	database.MigrateDB(db)
 
+	e.Use(helper.Cache().Middleware())
 	e.Pre(middleware.RemoveTrailingSlash())
 	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
 		Format: "method=${method}, uri=${uri}, status=${status}\n",

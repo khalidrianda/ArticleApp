@@ -1,5 +1,7 @@
 package domain
 
+import "github.com/labstack/echo/v4"
+
 type Core struct {
 	ID     uint
 	Author string
@@ -15,4 +17,9 @@ type Repository interface {
 type Services interface {
 	Create(newData Core) (Core, error)
 	Show(query string, author string) ([]Core, error)
+}
+
+type Handler interface {
+	Insert() echo.HandlerFunc
+	GetData() echo.HandlerFunc
 }

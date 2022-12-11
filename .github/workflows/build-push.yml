@@ -39,4 +39,4 @@ jobs:
             docker stop project-articleapp
             docker rm project-articleapp
             docker rmi khalidrian/articleapp:latest
-            docker run --name project-articleapp --link altaserver -d -p 80:8000 -e SERVER_PORT=${{ secrets.SERVER_PORT }} -e DB_USERNAME=${{ secrets.DB_USERNAME }} -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_NAME=${{ secrets.DB_NAME }} -e JWT_SECRET=${{ secrets.JWT_SECRET }} khalidrian/articleapp
+            docker run --name project-articleapp --link deployment -d -p 80:8000 -e SERVER_PORT=${{ secrets.SERVER_PORT }} -e DB_USERNAME=${{ secrets.DB_USERNAME }} -e DB_HOST=${{ secrets.DB_HOST }} -e DB_PORT=${{ secrets.DB_PORT }} -e DB_NAME=${{ secrets.DB_NAME }} -e JWT_SECRET=${{ secrets.JWT_SECRET }} khalidrian/articleapp

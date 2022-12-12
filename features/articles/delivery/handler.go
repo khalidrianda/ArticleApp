@@ -11,10 +11,12 @@ type articleHandler struct {
 	srv domain.Services
 }
 
-func New(e *echo.Echo, srv domain.Services) {
+func New(e *echo.Echo, srv domain.Services) domain.Handler {
 	handler := articleHandler{srv: srv}
 	e.GET("/article", handler.GetData())
 	e.POST("/article", handler.Insert())
+
+	return &handler
 }
 
 func (ah *articleHandler) Insert() echo.HandlerFunc {

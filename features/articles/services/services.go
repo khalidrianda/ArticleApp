@@ -13,7 +13,7 @@ func New(repo domain.Repository) domain.Services {
 func (as *articleServices) Create(newData domain.Core) (domain.Core, error) {
 	res, err := as.qry.Insert(newData)
 	if err != nil {
-		return newData, err
+		return res, err
 	}
 
 	return res, nil

@@ -46,6 +46,11 @@ func ToResponse(core interface{}, code string) interface{} {
 }
 
 type GetArticleResponseFormat struct {
-	Data    []domain.Core `json:"data"`
-	Message string        `json:"message"`
+	Message string            `json:"message"`
+	Data    []ArticleResponse `json:"data"`
+}
+
+type ArticleResponseFormat struct {
+	Message string          `json:"message"`
+	Data    ArticleResponse `json:"data"`
 }

@@ -111,7 +111,7 @@
    DB_USERNAME = "YOUR DB USERNAME" 
    DB_HOST     = "YOUR DB HOST"
    DB_NAME     = "YOUR DB NAME"
-   JWT_SECRET  = "YOUR JWT SECRED"
+   JWT_SECRET  = "YOUR JWT SECRET"
    ```
 4. Run project
    ```bash
@@ -147,7 +147,7 @@ See the [open issues](https://github.com/khalidrianda/ArticleApp/issues) for a f
 <!-- CONTACT -->
 ## Contact
 
-[![Khalid][khalid]][khalid-url][![LinkedIn-Khalid][linkedin-shield]][linkedin-url-1] [![Email-Khalid][email-shield]][email-1]
+[![Khalid][khalid]][khalid-url] [![LinkedIn-Khalid][linkedin-shield]][linkedin-url-1] [![Email-Khalid][email-shield]][email-1]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

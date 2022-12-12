@@ -21,7 +21,7 @@ func Cache() *cache.Client {
 
 	cacheClient, err := cache.NewClient(
 		cache.ClientWithAdapter(memcached),
-		cache.ClientWithTTL(10*time.Minute),
+		cache.ClientWithTTL(1*time.Minute),
 		cache.ClientWithRefreshKey("opn"),
 	)
 	if err != nil {
